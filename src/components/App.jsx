@@ -59,6 +59,7 @@ export function App() {
 
   return (
     <div className="App">
+      
       <Searchbar onSearch={onSearch} onChange={setSearch} search={search} />
       {images.length > 0 && <ImageGallery images={images} click={openModal} />}
       {loade && <Loader />}
