@@ -1,6 +1,7 @@
 import { getMovieCredits } from 'Api/Api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Box, CastList } from './Style';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -14,12 +15,16 @@ const Cast = () => {
   }, [movieId]);
 
   if (casts.length < 1) {
-    return;
+     return (
+       <Box>
+         <p>We don't have any casts for this movie.</p>
+       </Box>
+     );
   }
 
   return (
-    <div>
-      <ul>
+    <Box>
+      <CastList>
         {casts.map(cast => (
           <li key={cast.id}>
             <img
@@ -32,13 +37,12 @@ const Cast = () => {
               width="150"
             />
             <p>{cast.name}</p>
-            <p>Character: {cast.character}</p>
+            <p>Character: {cast.character ?? '-'}</p>
           </li>
         ))}
-      </ul>
-    </div>
+      </CastList>
+    </Box>
   );
 };
 
 export default Cast;
-

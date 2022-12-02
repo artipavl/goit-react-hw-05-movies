@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { List } from './Style';
+import { List } from './style';
 
 const TrendingList = ({data}) => {
   const location = useLocation();
