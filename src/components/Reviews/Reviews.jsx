@@ -1,4 +1,5 @@
 import { getMovieReviews } from 'Api/Api';
+import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, ReviewsList } from './Style';
@@ -27,8 +28,7 @@ const Reviews = () => {
       <ReviewsList>
         {reviews.map(review => (
           <li key={review.id}>
-            <b>Auther: {review.author}</b>
-            <p>{review.content}</p>
+            <ReviewsItem review={review} />
           </li>
         ))}
       </ReviewsList>
