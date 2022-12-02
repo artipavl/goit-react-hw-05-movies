@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const Box = styled.div`
-padding: 15px;
+export const Section = styled.div`
+  display: block;
+  padding: 15px;
   
 `;
