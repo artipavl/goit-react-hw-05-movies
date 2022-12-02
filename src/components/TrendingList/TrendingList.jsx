@@ -1,7 +1,7 @@
 import { getTrending } from 'Api/Api';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { List } from './style';
+// import { List } from './style';
 
 const TrendingList = () => {
   const location = useLocation();
@@ -16,7 +16,7 @@ const TrendingList = () => {
   return (
     <>
       <h1>Trending todey</h1>
-      <List>
+      <ul>
         {data.map(movie => (
           <li key={movie.id}>
             <Link to={`movies/${movie.id}`} state={location}>
@@ -24,7 +24,7 @@ const TrendingList = () => {
             </Link>
           </li>
         ))}
-      </List>
+      </ul>
     </>
   );
 };
