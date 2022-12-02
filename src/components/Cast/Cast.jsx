@@ -8,7 +8,9 @@ const Cast = () => {
   const [casts, setCasts] = useState([]);
 
   useEffect(() => {
-    getMovieCredits(movieId).then(data => setCasts(data.cast));
+    getMovieCredits(movieId)
+      .then(data => setCasts(data.cast))
+      .catch(console.error);
   }, [movieId]);
 
   if (casts.length < 1) {
