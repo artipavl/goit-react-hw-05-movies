@@ -9,7 +9,7 @@ const LANGUAGE = 'language=en-US';
 // список найпопулярніших фільмів на сьогодні для створення колекції на головній сторінці.
 export async function getTrending() {
   const get = await axiosMovies.get(`/trending/all/day?api_key=${KEY}`);
-  return get.data;
+  return get.data.results;
 }
 
 // пошук фільму за ключовим словом на сторінці фільмів.
@@ -17,7 +17,7 @@ export async function getSearchMovie(query, page) {
   const get = await axiosMovies.get(
     `/search/movie?api_key=${KEY}&${LANGUAGE}&query=${query}&page=${page}&include_adult=false`
   );
-  return get.data;
+  return get.data.results;
 }
 
 // запит повної інформації про фільм для сторінки кінофільму.
