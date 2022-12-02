@@ -1,7 +1,8 @@
 import { getTrending } from 'Api/Api';
 import { List } from 'components/SearchMovieList/Style';
+import { MovieItam } from 'components/MovieItam/MovieItam';
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const TrendingList = () => {
   const location = useLocation();
@@ -26,9 +27,7 @@ const TrendingList = () => {
       <List>
         {data.map(movie => (
           <li key={movie.id}>
-            <Link to={`movies/${movie.id}`} state={location}>
-              {movie.original_title || movie.name}
-            </Link>
+            <MovieItam movie={movie} location={location} />
           </li>
         ))}
       </List>
