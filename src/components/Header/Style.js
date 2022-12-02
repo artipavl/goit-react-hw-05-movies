@@ -18,7 +18,12 @@ export const NaveLink = styled(NavLink)`
   padding: 10px;
   text-decoration: none;
 
-  &.active{
+  &.active {
     color: red;
+  }
+
+  :hover:not(.active),
+  :focus:not(.active) {
+    color: blue;
   }
 `;
