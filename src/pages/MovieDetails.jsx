@@ -1,6 +1,6 @@
 import { getMovieDetails } from 'Api/Api';
 import MovieDetalsInformation from 'components/MovieDetalsInformation/MovieDetalsInformation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 
 const MovieDetails = () => {
@@ -21,7 +21,9 @@ const MovieDetails = () => {
   return (
     <div>
       <MovieDetalsInformation data={data} />
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

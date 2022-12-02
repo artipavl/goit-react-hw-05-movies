@@ -1,23 +1,23 @@
-import { getTrending } from 'Api/Api';
-import TrendingList from 'components/TrendingList/TrendingList';
-import { useEffect } from 'react';
-import { useState } from 'react';
+// import { getTrending } from 'Api/Api';
+import Header from 'components/Header/Header';
+import { Box } from 'components/MovieDetalsInformation/Style';
+import { Suspense } from 'react';
+// import TrendingList from 'components/TrendingList/TrendingList';
+// import { useEffect } from 'react';
+// import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  
- useEffect(() => {
-   getTrending().then(data => setData(data)).catch(console.error);
- }, []);
-
- return (
-   <div>
-     <h1>Trending todey</h1>
-     <TrendingList data={data} />
-     <Outlet />
-   </div>
- );
+  return (
+    <div>
+      <Header />
+      <Box>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </Box>
+    </div>
+  );
 };
 
 export default Home;

@@ -5,11 +5,8 @@ const Header = () => {
   return (
     <HeaderPage>
       <Nav>
-
-          <NaveLink to="/">Home</NaveLink>
-
-          <NaveLink to="movies">Movies</NaveLink>
-
+        <NaveLink to="/">Home</NaveLink>
+        <NaveLink to="movies">Movies</NaveLink>
       </Nav>
     </HeaderPage>
   );

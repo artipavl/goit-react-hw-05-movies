@@ -11,7 +11,6 @@ const Movies = () => {
   const [searchParams] = useSearchParams();
   const search = searchParams.get('q');
 
-
   useEffect(() => {
     if (search) {
       getSearchMovie(search, 1)
@@ -23,9 +22,7 @@ const Movies = () => {
   return (
     <div>
       <SearchMovie />
-      {data.length > 0 && (
-        <SearchMovieList data={data} />
-      )}
+      {data.length > 0 && <SearchMovieList data={data} />}
     </div>
   );
 };

@@ -15,11 +15,11 @@ const Cast = () => {
   }, [movieId]);
 
   if (casts.length < 1) {
-     return (
-       <Box>
-         <p>We don't have any casts for this movie.</p>
-       </Box>
-     );
+    return (
+      <Box>
+        <p>We don't have any casts for this movie.</p>
+      </Box>
+    );
   }
 
   return (
