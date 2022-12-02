@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import Trending from 'components/Trending/Trending';
 
 const Home = () => {
   return (
     <div>
       <p>Home</p>
-      <Link to="movies">Movies</Link>
+        <Trending />
     </div>
   );
 };
