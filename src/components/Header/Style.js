@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderPage = styled.header`
@@ -12,8 +12,13 @@ export const Nav = styled.nav`
   height: 100%;
 `;
 
-export const NaveLink = styled(Link)`
-display: block;
-height: 100%;
-padding: 10px;
-`
+export const NaveLink = styled(NavLink)`
+  display: block;
+  height: 100%;
+  padding: 10px;
+  text-decoration: none;
+
+  &.active{
+    color: red;
+  }
+`;

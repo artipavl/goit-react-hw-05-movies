@@ -14,6 +14,13 @@ const Movies = () => {
   useEffect(() => {
     if (search) {
       getSearchMovie(search, 1)
+        .then(data =>
+          data.map(({ id, original_title, name }) => ({
+            id,
+            original_title,
+            name,
+          }))
+        )
         .then(data => setData(data))
         .catch(console.error);
     }

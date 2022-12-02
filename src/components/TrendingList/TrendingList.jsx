@@ -8,6 +8,13 @@ const TrendingList = () => {
 
   useEffect(() => {
     getTrending()
+      .then(data =>
+        data.map(({ id, original_title, name }) => ({
+          id,
+          original_title,
+          name,
+        }))
+      )
       .then(data => setData(data))
       .catch(console.error);
   }, []);
