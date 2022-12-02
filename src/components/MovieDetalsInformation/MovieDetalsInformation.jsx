@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import { Box, GoBeck, MovieInformation, MovieInformationBox } from './Style';
 
@@ -59,6 +60,18 @@ const MovieDetalsInformation = ({
       </MovieInformationBox>
     </Box>
   );
+};
+
+MovieDetalsInformation.propTypes = {
+  data: PropTypes.shape({
+    genres: PropTypes.arrayOf(PropTypes.shape({ name: PropTypes.string }))
+      .isRequired,
+    release_date: PropTypes.string.isRequired,
+    poster_path: PropTypes.string,
+    original_title: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    popularity: PropTypes.number.isRequired,
+  }),
 };
 
 export default MovieDetalsInformation;
