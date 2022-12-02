@@ -10,7 +10,26 @@ const MovieDetails = () => {
 
   useEffect(() => {
     getMovieDetails(movieId)
-      .then(data => setData(data))
+      .then(
+        ({
+          id,
+          genres,
+          release_date,
+          poster_path,
+          original_title,
+          overview,
+          popularity,
+        }) =>
+          setData({
+            id,
+            genres,
+            release_date,
+            poster_path,
+            original_title,
+            overview,
+            popularity,
+          })
+      )
       .catch(console.error);
   }, [movieId]);
 
