@@ -8,7 +8,9 @@ const Reviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    getMovieReviews(movieId, 1).then(data => setReviews(data.results));
+    getMovieReviews(movieId, 1)
+      .then(data => setReviews(data.results))
+      .catch(console.error);
   }, [movieId]);
 
   if (reviews.length < 1) {
