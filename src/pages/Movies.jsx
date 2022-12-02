@@ -1,10 +1,10 @@
-import { Link } from 'react-router-dom';
+import SearchMovie from 'components/SearchMovie/SearchMovie';
 
 const Movies = () => {
   return (
     <div>
       <p>Movies</p>
-      <Link to=":movieId">MovieDetails</Link>
+      <SearchMovie/>
     </div>
   );
 };
