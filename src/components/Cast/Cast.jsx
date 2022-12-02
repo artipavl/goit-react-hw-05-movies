@@ -1,4 +1,5 @@
 import { getMovieCredits } from 'Api/Api';
+import { CastItem } from 'components/CastItem/CastItem';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Box, CastList } from './Style';
@@ -27,17 +28,7 @@ const Cast = () => {
       <CastList>
         {casts.map(cast => (
           <li key={cast.id}>
-            <img
-              src={
-                cast.profile_path
-                  ? `https://image.tmdb.org/t/p/w500${cast.profile_path}`
-                  : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRIwd-UFT6cmM0mhCyVVBI4oJN87ZizN1YKQ&usqp=CAU'
-              }
-              alt={casts.original_title}
-              width="150"
-            />
-            <p>{cast.name}</p>
-            <p>Character: {cast.character ?? '-'}</p>
+            <CastItem cast={cast} />
           </li>
         ))}
       </CastList>
