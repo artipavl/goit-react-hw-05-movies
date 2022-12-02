@@ -6,7 +6,8 @@ import { Outlet, useParams } from 'react-router-dom';
 const MovieDetails = () => {
   const { movieId } = useParams();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     getMovieDetails(movieId)
@@ -30,10 +31,18 @@ const MovieDetails = () => {
             popularity,
           })
       )
-      .catch(console.error);
+      .catch(setError);
   }, [movieId]);
 
-  if (data.length < 1) {
+  if (error) {
+    return (
+      <>
+        <h1>{error.message}</h1>
+      </>
+    );
+  }
+
+  if (!data) {
     return;
   }
 
