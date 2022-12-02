@@ -1,7 +1,6 @@
 import { getTrending } from 'Api/Api';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-// import { List } from './style';
 
 const TrendingList = () => {
   const location = useLocation();
